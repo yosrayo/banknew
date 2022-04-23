@@ -1,0 +1,173 @@
+<ion-content [fullscreen]="true">
+  <ion-label class="welcomeMessage">
+    <div class="ion-text-center">
+      <ion-text >
+        <h1>Sign Up!</h1>
+      </ion-text>
+    </div>
+  
+  </ion-label> 
+
+  <form [formGroup]="signupForm" >
+    <ion-list lines="none" class="ion-margin ion-text-center">
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="person-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input 
+          formControlName="username" 
+          placeholder="Enter Username"
+          [(ngModel)]="user.userName">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
+        <p class="error">*Please enter Username</p>
+      </ion-text>
+
+    
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="person-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input 
+          formControlName="nom" 
+          placeholder="Enter Nom"
+          name="firstName"
+          [(ngModel)]="user.firstName">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!signupForm.get('nom').valid && signupForm.get('nom').touched">
+        <p class="error">*Please enter Nom</p>
+      </ion-text>
+  
+
+
+  
+
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="person-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input 
+          formControlName="prenom" 
+          placeholder="Enter Prenom"
+          name="lastName"
+          [(ngModel)]="user.lastName">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!signupForm.get('prenom').valid && signupForm.get('prenom').touched">
+        <p class="error">*Please enter prenom</p>
+      </ion-text>
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="location-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input 
+          formControlName="ville" 
+          placeholder="Enter ville"
+          name="address"
+          [(ngModel)]="user.address">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!signupForm.get('ville').valid && signupForm.get('ville').touched">
+        <p class="error">*Please enter Username</p>
+      </ion-text>
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="call-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input 
+          formControlName="tel" 
+          placeholder="Enter telephene"
+          name="phone"
+          [(ngModel)]="user.phone">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!signupForm.get('tel').valid && signupForm.get('tel').touched">
+        <p class="error">*Please enter Username</p>
+      </ion-text>
+
+
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon 
+          name="mail-outline" slot="end" color="medium">
+        </ion-icon>
+        <ion-input 
+          formControlName="email" 
+          placeholder="Enter Email Address"
+          name="mail"
+          [(ngModel)]="user.mail">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+        <p class="error">*Please enter proper Email Address</p>
+      </ion-text>
+
+      <ion-item class="ion-margin-vertical">
+        <ion-icon (click)="onChange()"
+          [name]="isTypePassword ? 'lock-closed-outline' : 'lock-open-outline'" 
+          slot="end" 
+          [color]="isTypePassword ? 'medium' : 'primary'">
+        </ion-icon>
+        <ion-input 
+          formControlName="password" 
+          [type]="isTypePassword ? 'password' : 'text'"
+          placeholder="Enter Password"
+          name="pwd"
+          [(ngModel)]="user.pwd">
+        </ion-input>
+      </ion-item>
+      <ion-text 
+        class="ion-text-left"
+        color="danger"
+        *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+        <p 
+          class="error" 
+          *ngIf="signupForm.get('password').invalid && signupForm.get('password').errors.required">
+          *Please enter your Password
+        </p>
+        <p 
+          class="error" 
+          *ngIf="signupForm.get('password').dirty">
+          *Password must be of atleast 8 characters
+        </p>
+      </ion-text>
+
+      <ion-row class="ion-margin-vertical">
+        <ion-col size="12" class="alignItems">
+          <div align=left>
+            <ion-checkbox></ion-checkbox>
+            <ion-note>I accept the policy and terms</ion-note>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-button color="primary" expand="full" >suivant</ion-button>
+    </ion-list>
+  </form>
+
+
+  
+</ion-content>

@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+     <ion-menu-button *ngIf="!back"></ion-menu-button>
+     <ion-back-button *ngIf="back" defaultHref="/home"></ion-back-button>
+     
+    </ion-buttons>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <img src="../../assets/logo.png" class="logo" />
+
+ 
+
+  <ion-button (click)="scan()" class="scan">Permission d'utiliser la camera</ion-button>
+</ion-content>
